@@ -7,7 +7,7 @@
   <meta name="description" content="Mamparas de vidrio a medida. Corredizas, fijas, rebatibles y plegadizas. Instalación incluida en Capital Federal y Gran Buenos Aires." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,200;0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300;1,400&family=DM+Sans:opsz,wght@9..40,200;9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -20,13 +20,7 @@
       --nav-h:  68px;
     }
     html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
-    body {
-      font-family: 'DM Sans', system-ui, sans-serif;
-      font-weight: 300;
-      color: var(--dark);
-      background: var(--white);
-      overflow-x: hidden;
-    }
+    body { font-family: 'DM Sans', system-ui, sans-serif; font-weight: 300; color: var(--dark); background: var(--white); overflow-x: hidden; }
     a { text-decoration: none; color: inherit; }
     em { font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 300; }
 
@@ -43,26 +37,17 @@
     nav.scrolled { box-shadow: 0 1px 24px rgba(0,0,0,0.07); }
     .nav-logo svg { display: block; height: 32px; width: auto; }
     .nav-links { display: flex; align-items: center; gap: 36px; }
-    .nav-links a {
-      font-size: 11px; font-weight: 400; letter-spacing: 0.12em;
-      text-transform: uppercase; color: var(--mid);
-      transition: color .15s;
-    }
+    .nav-links a { font-size: 11px; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mid); transition: color .15s; }
     .nav-links a:hover { color: var(--dark); }
-    .nav-cta {
-      margin-left: 8px;
-      background: var(--orange) !important; color: var(--white) !important;
-      padding: 9px 20px; font-size: 11px !important; letter-spacing: 0.1em !important;
-      transition: opacity .15s !important;
-    }
-    .nav-cta:hover { opacity: .85; color: var(--white) !important; }
+    .nav-cta { margin-left: 8px; background: var(--orange) !important; color: var(--white) !important; padding: 9px 20px; font-size: 11px !important; letter-spacing: 0.1em !important; transition: opacity .15s !important; }
+    .nav-cta:hover { opacity: .85; }
 
     /* ── HERO ────────────────────────────────────────────────── */
     #hero {
-      height: 100vh; min-height: 620px;
+      height: 72vh; min-height: 520px;
       position: relative; overflow: hidden;
       display: flex; align-items: flex-end;
-      padding: 0 10vw calc(var(--nav-h) + 64px);
+      padding: 0 10vw calc(var(--nav-h) + 52px);
       background: var(--dark);
     }
     .hero-bg {
@@ -71,209 +56,91 @@
       opacity: .28;
     }
     .hero-content { position: relative; width: 100%; }
-    .hero-eyebrow {
-      display: inline-flex; align-items: center; gap: 12px;
-      font-size: 10px; font-weight: 400; letter-spacing: .22em; text-transform: uppercase;
-      color: rgba(255,255,255,.45); margin-bottom: 28px;
-    }
+    .hero-eyebrow { display: inline-flex; align-items: center; gap: 12px; font-size: 10px; font-weight: 400; letter-spacing: .22em; text-transform: uppercase; color: rgba(255,255,255,.45); margin-bottom: 28px; }
     .hero-eyebrow::before { content: ''; width: 32px; height: 1px; background: var(--orange); }
-    .hero-h1 {
-      font-size: clamp(52px, 7.5vw, 108px);
-      font-weight: 200; line-height: 1.0;
-      letter-spacing: -0.03em; color: var(--white);
-      margin-bottom: 6px;
-    }
-    .hero-h1-line2 {
-      font-size: clamp(56px, 8vw, 116px);
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-style: italic; font-weight: 300; line-height: 1.0;
-      letter-spacing: -0.01em; color: rgba(255,255,255,.75);
-      margin-bottom: 40px;
-    }
-    .hero-bottom {
-      display: flex; align-items: flex-end;
-      justify-content: space-between; flex-wrap: wrap; gap: 24px;
-    }
-    .hero-sub {
-      font-size: 14px; font-weight: 300; line-height: 1.8;
-      color: rgba(255,255,255,.45); max-width: 380px;
-    }
-    .hero-cta {
-      display: inline-flex; align-items: center; gap: 12px;
-      font-size: 11px; font-weight: 400; letter-spacing: .14em; text-transform: uppercase;
-      color: var(--white); white-space: nowrap;
-      transition: gap .2s;
-    }
+    .hero-h1 { font-size: clamp(48px, 7vw, 100px); font-weight: 200; line-height: 1.0; letter-spacing: -0.03em; color: var(--white); margin-bottom: 6px; }
+    .hero-h1-2 { font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 300; font-size: clamp(52px, 7.5vw, 108px); line-height: 1.0; letter-spacing: -0.01em; color: rgba(255,255,255,.7); margin-bottom: 36px; }
+    .hero-bottom { display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: 24px; }
+    .hero-sub { font-size: 14px; font-weight: 300; line-height: 1.8; color: rgba(255,255,255,.45); max-width: 380px; }
+    .hero-cta { display: inline-flex; align-items: center; gap: 12px; font-size: 11px; font-weight: 400; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.6); white-space: nowrap; transition: gap .2s; }
     .hero-cta::after { content: ''; width: 40px; height: 1px; background: var(--orange); transition: width .2s; }
+    .hero-cta:hover { gap: 18px; }
     .hero-cta:hover::after { width: 56px; }
 
-    /* ── PRODUCT SECTIONS ────────────────────────────────────── */
-    .product-section {
+    /* ── CATEGORY SECTION ────────────────────────────────────── */
+    .cat-section { padding: 96px 0 80px; border-top: 1px solid rgba(0,0,0,.07); }
+    .cat-header {
       display: grid; grid-template-columns: 1fr 1fr;
-      min-height: 85vh;
+      gap: 48px; align-items: end;
+      padding: 0 10vw; margin-bottom: 56px;
     }
-    .product-section.reverse .product-img { order: 2; }
-    .product-section.reverse .product-info { order: 1; }
-    .product-img {
-      position: relative; overflow: hidden;
-      min-height: 480px;
+    .cat-counter { font-size: 10px; font-weight: 400; letter-spacing: .22em; text-transform: uppercase; color: var(--muted); margin-bottom: 44px; display: flex; align-items: center; gap: 14px; }
+    .cat-counter::after { content: ''; width: 44px; height: 1px; background: currentColor; opacity: .35; }
+    .cat-material { font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 300; font-size: 14px; color: var(--orange); margin-bottom: 14px; letter-spacing: .04em; }
+    .cat-h2 { font-size: clamp(36px, 4vw, 58px); font-weight: 200; letter-spacing: -.025em; line-height: 1.05; color: var(--dark); }
+    .cat-h2 em { font-size: 1.1em; display: block; }
+    .cat-desc-wrap { padding-bottom: 8px; }
+    .cat-desc { font-size: 14px; font-weight: 300; line-height: 1.85; color: var(--mid); margin-bottom: 24px; }
+    .cat-count { font-size: 10px; font-weight: 400; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); }
+
+    /* ── PRODUCT GRID ────────────────────────────────────────── */
+    .products-grid {
+      padding: 0 10vw;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 2px;
     }
-    .product-img img {
-      position: absolute; inset: 0;
-      width: 100%; height: 100%; object-fit: cover;
-      transition: transform .9s cubic-bezier(.16,1,.3,1);
-    }
-    .product-section:hover .product-img img { transform: scale(1.05); }
-    .product-info {
-      display: flex; flex-direction: column; justify-content: center;
-      padding: 80px 72px; background: var(--white);
-      position: relative;
-    }
-    .product-section:nth-child(odd) .product-info { background: var(--light); }
-    .prod-counter {
-      font-size: 10px; font-weight: 400; letter-spacing: .2em; text-transform: uppercase;
-      color: var(--muted); margin-bottom: 48px;
-      display: flex; align-items: center; gap: 16px;
-    }
-    .prod-counter::after { content: ''; flex: 1; max-width: 48px; height: 1px; background: currentColor; opacity: .4; }
-    .prod-material {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-style: italic; font-weight: 300;
-      font-size: 14px; color: var(--orange);
-      margin-bottom: 14px; letter-spacing: .04em;
-    }
-    .prod-h2 {
-      font-size: clamp(36px, 3.8vw, 56px);
-      font-weight: 200; letter-spacing: -.025em; line-height: 1.05;
-      color: var(--dark); margin-bottom: 28px;
-    }
-    .prod-h2 em {
-      font-size: 1.12em;
-      display: block; color: var(--dark);
-    }
-    .prod-desc {
-      font-size: 14px; font-weight: 300; line-height: 1.85;
-      color: var(--mid); max-width: 400px; margin-bottom: 36px;
-    }
-    .prod-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 44px; }
-    .prod-tag {
-      font-size: 10px; font-weight: 400; letter-spacing: .1em; text-transform: uppercase;
-      color: var(--muted); border: 1px solid rgba(0,0,0,.12);
-      padding: 5px 13px;
-    }
-    .prod-link {
-      display: inline-flex; align-items: center; gap: 12px;
-      font-size: 11px; font-weight: 400; letter-spacing: .14em; text-transform: uppercase;
-      color: var(--dark); transition: gap .2s;
-    }
-    .prod-link::after { content: ''; width: 32px; height: 1px; background: var(--orange); transition: width .2s; }
-    .prod-link:hover { gap: 18px; }
-    .prod-link:hover::after { width: 48px; }
+    .product-card { background: var(--white); overflow: hidden; }
+    .product-card-img-wrap { overflow: hidden; aspect-ratio: 3/4; background: var(--light); }
+    .product-card-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .8s cubic-bezier(.16,1,.3,1); }
+    .product-card:hover .product-card-img-wrap img { transform: scale(1.05); }
+    .product-card-body { padding: 20px 22px 28px; border-top: 1px solid rgba(0,0,0,.06); }
+    .prod-badge { display: inline-block; font-size: 9px; font-weight: 400; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
+    .prod-badge.templado { color: var(--orange); }
+    .product-card-name { font-size: 14px; font-weight: 400; line-height: 1.35; color: var(--dark); margin-bottom: 8px; }
+    .product-card-desc { font-size: 12px; font-weight: 300; line-height: 1.7; color: var(--mid); }
+
+    /* ── PLEGADIZAS (1 item) ─────────────────────────────────── */
+    .products-grid.single { grid-template-columns: repeat(3, 1fr); }
+    @media (max-width: 900px) { .products-grid.single { grid-template-columns: 1fr; } }
 
     /* ── STATS ───────────────────────────────────────────────── */
-    #stats {
-      padding: 0 10vw;
-      background: var(--dark);
-      overflow: hidden;
-    }
-    .stats-top {
-      padding: 88px 0 64px;
-      border-bottom: 1px solid rgba(255,255,255,.08);
-      display: flex; align-items: flex-end; justify-content: space-between; gap: 40px;
-    }
-    .stats-h2 {
-      font-size: clamp(28px, 3.2vw, 44px); font-weight: 200;
-      letter-spacing: -.02em; line-height: 1.15; color: var(--white);
-      max-width: 420px;
-    }
-    .stats-h2 em { font-size: 1.08em; color: rgba(255,255,255,.5); }
-    .stats-sub {
-      font-size: 13px; font-weight: 300; color: rgba(255,255,255,.35);
-      max-width: 320px; line-height: 1.8; text-align: right;
-    }
-    .stats-numbers {
-      display: grid; grid-template-columns: repeat(4, 1fr);
-      padding: 64px 0 88px;
-    }
-    .stat-item {
-      padding: 0 40px 0 0;
-      border-right: 1px solid rgba(255,255,255,.08);
-    }
+    #stats { padding: 0 10vw; background: var(--dark); margin-top: 96px; }
+    .stats-top { padding: 88px 0 64px; border-bottom: 1px solid rgba(255,255,255,.08); display: flex; align-items: flex-end; justify-content: space-between; gap: 40px; }
+    .stats-h2 { font-size: clamp(28px, 3.2vw, 44px); font-weight: 200; letter-spacing: -.02em; line-height: 1.15; color: var(--white); max-width: 420px; }
+    .stats-h2 em { font-size: 1.08em; color: rgba(255,255,255,.45); }
+    .stats-sub { font-size: 13px; font-weight: 300; color: rgba(255,255,255,.35); max-width: 300px; line-height: 1.8; text-align: right; }
+    .stats-numbers { display: grid; grid-template-columns: repeat(4, 1fr); padding: 64px 0 88px; }
+    .stat-item { padding: 0 40px 0 0; border-right: 1px solid rgba(255,255,255,.08); }
     .stat-item:first-child { padding-left: 0; }
     .stat-item:last-child { border-right: none; padding-right: 0; }
-    .stat-n {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-weight: 300; font-size: 72px; line-height: 1;
-      color: var(--orange); letter-spacing: -.02em; margin-bottom: 12px;
-    }
+    .stat-n { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: 72px; line-height: 1; color: var(--orange); letter-spacing: -.02em; margin-bottom: 12px; }
     .stat-l { font-size: 12px; font-weight: 300; color: rgba(255,255,255,.35); line-height: 1.6; }
 
     /* ── CONTACT ─────────────────────────────────────────────── */
-    #contact {
-      display: grid; grid-template-columns: 1fr 1fr;
-      min-height: 60vh;
-    }
-    .contact-info-col {
-      padding: 88px 72px;
-      display: flex; flex-direction: column; justify-content: center;
-      background: var(--white);
-    }
-    .contact-eyebrow {
-      font-size: 10px; font-weight: 400; letter-spacing: .22em; text-transform: uppercase;
-      color: var(--orange); margin-bottom: 28px;
-      display: flex; align-items: center; gap: 12px;
-    }
+    #contact { display: grid; grid-template-columns: 1fr 1fr; min-height: 56vh; }
+    .contact-info-col { padding: 88px 72px; display: flex; flex-direction: column; justify-content: center; background: var(--white); }
+    .contact-eyebrow { font-size: 10px; font-weight: 400; letter-spacing: .22em; text-transform: uppercase; color: var(--orange); margin-bottom: 28px; display: flex; align-items: center; gap: 12px; }
     .contact-eyebrow::before { content: ''; width: 24px; height: 1px; background: var(--orange); }
-    .contact-h2 {
-      font-size: clamp(28px, 3vw, 44px); font-weight: 200;
-      letter-spacing: -.02em; line-height: 1.1; color: var(--dark);
-      margin-bottom: 20px;
-    }
-    .contact-h2 em { font-size: 1.08em; }
+    .contact-h2 { font-size: clamp(28px, 3vw, 44px); font-weight: 200; letter-spacing: -.02em; line-height: 1.1; color: var(--dark); margin-bottom: 20px; }
     .contact-desc { font-size: 14px; font-weight: 300; line-height: 1.8; color: var(--mid); margin-bottom: 40px; max-width: 380px; }
-    .wa-btn {
-      display: inline-flex; align-items: center; gap: 10px;
-      background: #25D366; color: var(--white);
-      padding: 13px 26px; font-size: 11px; font-weight: 400; letter-spacing: .1em; text-transform: uppercase;
-      margin-bottom: 48px; transition: opacity .15s;
-    }
+    .wa-btn { display: inline-flex; align-items: center; gap: 10px; background: #25D366; color: var(--white); padding: 13px 26px; font-size: 11px; font-weight: 400; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 48px; transition: opacity .15s; }
     .wa-btn:hover { opacity: .88; }
     .contact-rows { display: flex; flex-direction: column; gap: 22px; }
     .c-row { display: flex; align-items: flex-start; gap: 16px; }
+    .c-dot { width: 4px; height: 4px; background: var(--orange); border-radius: 50%; margin-top: 8px; flex-shrink: 0; }
     .c-lbl { font-size: 10px; font-weight: 400; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
     .c-val { font-size: 14px; font-weight: 300; color: var(--dark); line-height: 1.5; }
     .c-val a { color: var(--orange); }
     .c-val a:hover { text-decoration: underline; }
-    .c-dot {
-      width: 4px; height: 4px; background: var(--orange); border-radius: 50%;
-      margin-top: 8px; flex-shrink: 0;
-    }
-    .contact-img-col {
-      position: relative; overflow: hidden;
-      background: var(--light);
-    }
-    .contact-img-col img {
-      position: absolute; inset: 0;
-      width: 100%; height: 100%; object-fit: cover;
-      opacity: .6;
-    }
-    .contact-img-overlay {
-      position: absolute; inset: 0;
-      background: linear-gradient(to top, rgba(13,13,13,.55) 30%, transparent);
-    }
-    .contact-img-addr {
-      position: absolute; bottom: 48px; left: 48px; right: 48px;
-      color: rgba(255,255,255,.7); font-size: 13px; font-weight: 300; line-height: 1.7;
-    }
+    .contact-img-col { position: relative; overflow: hidden; background: var(--light); }
+    .contact-img-col img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .6; }
+    .contact-img-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(13,13,13,.55) 30%, transparent); }
+    .contact-img-addr { position: absolute; bottom: 48px; left: 48px; right: 48px; color: rgba(255,255,255,.7); font-size: 13px; font-weight: 300; line-height: 1.7; }
     .contact-img-addr strong { display: block; font-size: 15px; font-weight: 400; color: var(--white); margin-bottom: 6px; }
 
     /* ── FOOTER ──────────────────────────────────────────────── */
-    footer {
-      background: var(--dark); padding: 36px 52px;
-      display: flex; align-items: center; justify-content: space-between;
-      flex-wrap: wrap; gap: 16px;
-      border-top: 1px solid rgba(255,255,255,.06);
-    }
+    footer { background: var(--dark); padding: 36px 52px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; border-top: 1px solid rgba(255,255,255,.06); }
     .footer-logo svg { height: 20px; width: auto; display: block; }
     footer p { font-size: 11px; font-weight: 300; color: rgba(255,255,255,.25); letter-spacing: .05em; }
     .footer-links { display: flex; gap: 28px; }
@@ -284,12 +151,9 @@
     @media (max-width: 960px) {
       nav { padding: 0 28px; }
       .nav-links a:not(.nav-cta) { display: none; }
-      #hero { padding: 0 28px calc(var(--nav-h) + 44px); align-items: flex-end; }
-      .product-section { grid-template-columns: 1fr; min-height: auto; }
-      .product-section.reverse .product-img,
-      .product-section.reverse .product-info { order: unset; }
-      .product-img { min-height: 300px; }
-      .product-info { padding: 52px 32px; }
+      #hero { padding: 0 28px calc(var(--nav-h) + 44px); }
+      .cat-header { grid-template-columns: 1fr; gap: 24px; padding: 0 6vw; margin-bottom: 36px; }
+      .products-grid { padding: 0 6vw; }
       #stats .stats-top { flex-direction: column; align-items: flex-start; }
       .stats-sub { text-align: left; }
       .stats-numbers { grid-template-columns: 1fr 1fr; gap: 40px; }
@@ -328,7 +192,7 @@
     <div class="hero-content">
       <div class="hero-eyebrow">Fabricación a medida · Instalación incluida</div>
       <div class="hero-h1">Mamparas</div>
-      <div class="hero-h1-line2">de Vidrio</div>
+      <div class="hero-h1-2">de Vidrio</div>
       <div class="hero-bottom">
         <p class="hero-sub">Diseño, calidad y funcionalidad. Soluciones en vidrio laminado y templado para baños modernos y clásicos.</p>
         <a href="#corredizas" class="hero-cta">Ver catálogo</a>
@@ -336,79 +200,350 @@
     </div>
   </section>
 
-  <!-- CORREDIZAS -->
-  <section class="product-section" id="corredizas">
-    <div class="product-img">
-      <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&fit=crop&w=900&q=82" alt="Mamparas Corredizas" loading="lazy"/>
-    </div>
-    <div class="product-info">
-      <div class="prod-counter">01</div>
-      <div class="prod-material">Vidrio laminado</div>
-      <h2 class="prod-h2">Mamparas<em>Corredizas</em></h2>
-      <p class="prod-desc">Sistema de apertura deslizante. Ideal cuando el espacio no permite abrir una puerta hacia afuera. Fabricadas en vidrio laminado de alta resistencia.</p>
-      <div class="prod-tags">
-        <span class="prod-tag">Vidrio laminado</span>
-        <span class="prod-tag">A medida</span>
-        <span class="prod-tag">Apertura deslizante</span>
+  <!-- ── CORREDIZAS ──────────────────────────────────────────── -->
+  <section class="cat-section" id="corredizas">
+    <div class="cat-header">
+      <div>
+        <div class="cat-counter">01</div>
+        <div class="cat-material">Vidrio laminado</div>
+        <h2 class="cat-h2">Mamparas<em>Corredizas</em></h2>
       </div>
-      <a href="#contact" class="prod-link">Solicitar presupuesto</a>
+      <div class="cat-desc-wrap">
+        <p class="cat-desc">Sistema de apertura deslizante. Ideal cuando el espacio no permite abrir una puerta hacia afuera. Fabricadas en vidrio laminado de alta resistencia.</p>
+        <span class="cat-count">4 modelos disponibles</span>
+      </div>
+    </div>
+    <div class="products-grid">
+
+      <div class="product-card">
+        <div class="product-card-img-wrap">
+          <img src="https://www.mampara.com.ar/Mampara%20Corrediza%20de%20cuatro%20pa%C3%B1os%20en%20color%20aluminio.webp" alt="Corrediza 4 Paños — Aluminio Plata" loading="lazy"/>
+        </div>
+        <div class="product-card-body">
+          <span class="prod-badge">Vidrio laminado</span>
+          <div class="product-card-name">Corrediza 4 Paños — Aluminio Plata</div>
+          <div class="product-card-desc">Dos paños fijos y dos móviles. Perfilería en aluminio anodizado color plata. Vidrio laminado. Ideal para bañeras o duchas amplias.</div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-card-img-wrap">
+          <img src="https://www.mampara.com.ar/Mampara%20corrediza%20de%20cuatro%20pa%C3%B1os%20en%20color%20negro.webp" alt="Corrediza 4 Paños — Negro Mate" loading="lazy"/>
+        </div>
+        <div class="product-card-body">
+          <span class="prod-badge">Vidrio laminado</span>
+          <div class="product-card-name">Corrediza 4 Paños — Negro Mate</div>
+          <div class="product-card-desc">Dos paños fijos y dos móviles. Perfilería en aluminio negro mate. Vidrio laminado. Estética moderna e industrial.</div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-card-img-wrap">
+          <img src="https://www.mampara.com.ar/Mampara%20corrediza%20de%20dos%20pa%C3%B1os%20en%20Aluminio.webp" alt="Corrediza 2 Paños — Aluminio Plata" loading="lazy"/>
+        </div>
+        <div class="product-card-body">
+          <span class="prod-badge">Vidrio laminado</span>
+          <div class="product-card-name">Corrediza 2 Paños — Aluminio Plata</div>
+          <div class="product-card-desc">Un paño fijo y uno móvil deslizante. Aluminio anodizado color plata. Vidrio laminado. Solución práctica para duchas medianas.</div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-card-img-wrap">
+          <img src="https://www.mampara.com.ar/Mampara%20corrediza%20de%20dos%20pa%C3%B1os%20en%20color%20negro.webp" alt="Corrediza 2 Paños — Negro Mate" loading="lazy"/>
+        </div>
+        <div class="product-card-body">
+          <span class="prod-badge">Vidrio laminado</span>
+          <div class="product-card-name">Corrediza 2 Paños — Negro Mate</div>
+          <div class="product-card-desc">Un paño fijo y uno móvil deslizante. Aluminio negro mate. Vidrio laminado. Diseño moderno para duchas medianas.</div>
+        </div>
+      </div>
+
     </div>
   </section>
 
-  <!-- FIJAS -->
-  <section class="product-section reverse" id="fijas">
-    <div class="product-img">
-      <img src="https://images.unsplash.com/photo-1620626011761-996317702519?auto=format&fit=crop&w=900&q=82" alt="Mamparas Fijas" loading="lazy"/>
-    </div>
-    <div class="product-info">
-      <div class="prod-counter">02</div>
-      <div class="prod-material">Vidrio laminado</div>
-      <h2 class="prod-h2">Mamparas<em>Fijas</em></h2>
-      <p class="prod-desc">Paneles estáticos con mínima perfilería. Máxima transparencia y elegancia. Disponibles en vidrio transparente, laminado gris, bronce, opaco y acanalado.</p>
-      <div class="prod-tags">
-        <span class="prod-tag">Transparente</span>
-        <span class="prod-tag">Gris · Bronce</span>
-        <span class="prod-tag">Opaco · Acanalado</span>
+  <!-- ── FIJAS ───────────────────────────────────────────────── -->
+  <section class="cat-section" id="fijas">
+    <div class="cat-header">
+      <div>
+        <div class="cat-counter">02</div>
+        <div class="cat-material">Vidrio laminado</div>
+        <h2 class="cat-h2">Mamparas<em>Fijas</em></h2>
       </div>
-      <a href="#contact" class="prod-link">Solicitar presupuesto</a>
+      <div class="cat-desc-wrap">
+        <p class="cat-desc">Paneles estáticos con mínima perfilería. Máxima transparencia y elegancia. Disponibles en vidrio transparente, laminado gris, bronce, opaco y acanalado.</p>
+        <span class="cat-count">8 modelos disponibles</span>
+      </div>
+    </div>
+    <div class="products-grid">
+
+      <div class="product-card">
+        <div class="product-card-img-wrap">
+          <img src="https://www.mampara.com.ar/Mampara%20fija%20con%20aluminio%20plata.webp" alt="Fija · Perfil U — Plata" loading="lazy"/>
+        </div>
+        <div class="product-card-body">
+          <span class="prod-badge">Vidrio laminado</span>
+          <div class="product-card-name">Fija · Perfil U — Plata</div>
+          <div class="product-card-desc">Paño fijo con perfil U en base y lateral. Aluminio anodizado color plata. Vidrio laminado. Clásico y funcional.</div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-card-img-wrap">
+          <img src="https://www.mampara.com.ar/Mampara%20Fija%20con%20aluminio%20negro.webp" alt="Fija · Perfil U — Negro" loading="lazy"/>
+        </div>
+        <div class="product-card-body">
+          <span class="prod-badge">Vidrio laminado</span>
+          <div class="product-card-name">Fija · Perfil U — Negro</div>
+          <div class="product-card-desc">Paño fijo con perfil U en base y lateral. Aluminio negro mate. Vidrio laminado. Estética contemporánea y sofisticada.</div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-card-img-wrap">
+          <img src="https://www.mampara.com.ar/Mampara%20Fija%20con%20aluminio%20blanco.webp" alt="Fija · Perfil U — Blanco" loading="lazy"/>
+        </div>
+        <div class="product-card-body">
+          <span class="prod-badge">Vidrio laminado</span>
+          <div class="product-card-name">Fija · Perfil U — Blanco</div>
+          <div class="product-card-desc">Paño fijo con perfil U en base y lateral. Aluminio color blanco. Vidrio laminado. Ideal para baños claros y luminosos.</div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-card-img-wrap">
+          <img src="https://www.mampara.com.ar/Mampara%20Fija%20en%20aluminio%20con%20brazo%20tensor.webp" alt="Fija · Brazo Tensor — Plata" loading="lazy"/>
+        </div>
+        <div class="product-card-body">
+          <span class="prod-badge">Vidrio laminado</span>
+          <div class="product-card-name">Fija · Brazo Tensor — Plata</div>
+          <div class="product-card-desc">Paño fijo con perfil U más brazo tensor superior. Vidrio laminado. Máxima estabilidad sin pared lateral completa.</div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-card-img-wrap">
+          <img src="https://www.mampara.com.ar/Mampara%20Fija%20en%20vidrio%20acanalado.webp" alt="Fija · Vidrio Acanalado" loading="lazy"/>
+        </div>
+        <div class="product-card-body">
+          <span class="prod-badge">Vidrio laminado</span>
+          <div class="product-card-name">Fija · Vidrio Acanalado</div>
+          <div class="product-card-desc">Paño fijo en vidrio acanalado que difumina la visión aportando privacidad. Aluminio. Ideal para baños compartidos.</div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-card-img-wrap">
+          <img src="https://www.mampara.com.ar/Mampara%20Fija%20en%20vidrio%20laminado%20bronce.webp" alt="Fija · Laminado Bronce" loading="lazy"/>
+        </div>
+        <div class="product-card-body">
+          <span class="prod-badge">Vidrio laminado</span>
+          <div class="product-card-name">Fija · Laminado Bronce</div>
+          <div class="product-card-desc">Paño fijo en vidrio laminado tono bronce. Acabado cálido y elegante. Integra con mármoles y cerámicas en tonos terrosos.</div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-card-img-wrap">
+          <img src="https://www.mampara.com.ar/Mampara%20Fija%20en%20vidrio%20laminado%20gris.webp" alt="Fija · Laminado Gris" loading="lazy"/>
+        </div>
+        <div class="product-card-body">
+          <span class="prod-badge">Vidrio laminado</span>
+          <div class="product-card-name">Fija · Laminado Gris</div>
+          <div class="product-card-desc">Paño fijo en vidrio laminado tono gris. Estética sobria y moderna. Aporta privacidad parcial sin sacrificar luz.</div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-card-img-wrap">
+          <img src="https://www.mampara.com.ar/Mampara%20Fija%20en%20vidrio%20laminado%20opaco.webp" alt="Fija · Laminado Opaco" loading="lazy"/>
+        </div>
+        <div class="product-card-body">
+          <span class="prod-badge">Vidrio laminado</span>
+          <div class="product-card-name">Fija · Laminado Opaco</div>
+          <div class="product-card-desc">Paño fijo en vidrio laminado opaco. Privacidad total. Aluminio anodizado. Ideal para baños compartidos o ambientes íntimos.</div>
+        </div>
+      </div>
+
     </div>
   </section>
 
-  <!-- REBATIBLES -->
-  <section class="product-section" id="rebatibles">
-    <div class="product-img">
-      <img src="https://images.unsplash.com/photo-1507652955-f3dcef5a3be5?auto=format&fit=crop&w=900&q=82" alt="Mamparas Rebatibles" loading="lazy"/>
-    </div>
-    <div class="product-info">
-      <div class="prod-counter">03</div>
-      <div class="prod-material">Vidrio templado</div>
-      <h2 class="prod-h2">Mamparas<em>Rebatibles</em></h2>
-      <p class="prod-desc">Apertura tipo puerta. Amplia variedad en dos y tres paños, herrajes en plata y negro. Fabricadas en vidrio templado de seguridad.</p>
-      <div class="prod-tags">
-        <span class="prod-tag">Vidrio templado</span>
-        <span class="prod-tag">2 y 3 paños</span>
-        <span class="prod-tag">Herrajes plata / negro</span>
+  <!-- ── REBATIBLES ─────────────────────────────────────────── -->
+  <section class="cat-section" id="rebatibles">
+    <div class="cat-header">
+      <div>
+        <div class="cat-counter">03</div>
+        <div class="cat-material">Vidrio templado</div>
+        <h2 class="cat-h2">Mamparas<em>Rebatibles</em></h2>
       </div>
-      <a href="#contact" class="prod-link">Solicitar presupuesto</a>
+      <div class="cat-desc-wrap">
+        <p class="cat-desc">Apertura tipo puerta. Amplia variedad en dos y tres paños, herrajes en plata y negro. Fabricadas en vidrio templado de seguridad.</p>
+        <span class="cat-count">11 modelos disponibles</span>
+      </div>
+    </div>
+    <div class="products-grid">
+
+      <div class="product-card">
+        <div class="product-card-img-wrap">
+          <img src="https://www.mampara.com.ar/Mampara%20Rebatible%20de%20tres%20pa%C3%B1os%20en%20color%20plata.webp" alt="Rebatible 3 Paños — Plata" loading="lazy"/>
+        </div>
+        <div class="product-card-body">
+          <span class="prod-badge templado">Vidrio templado</span>
+          <div class="product-card-name">Rebatible 3 Paños — Plata</div>
+          <div class="product-card-desc">Dos paños fijos y uno rebatible. Herrajes en acero inoxidable plata. Vidrio templado 8 mm. Amplia abertura de acceso.</div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-card-img-wrap">
+          <img src="https://www.mampara.com.ar/Mampara%20Rebatible%20de%20tres%20pa%C3%B1os%20en%20color%20negro.webp" alt="Rebatible 3 Paños — Negro" loading="lazy"/>
+        </div>
+        <div class="product-card-body">
+          <span class="prod-badge templado">Vidrio templado</span>
+          <div class="product-card-name">Rebatible 3 Paños — Negro</div>
+          <div class="product-card-desc">Dos paños fijos y uno rebatible. Herrajes en negro mate. Vidrio templado 8 mm. Diseño premium y sofisticado.</div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-card-img-wrap">
+          <img src="https://www.mampara.com.ar/Mampara%20Rebatible%20de%20dos%20pa%C3%B1os%20en%20color%20plata.webp" alt="Rebatible 2 Paños — Plata" loading="lazy"/>
+        </div>
+        <div class="product-card-body">
+          <span class="prod-badge templado">Vidrio templado</span>
+          <div class="product-card-name">Rebatible 2 Paños — Plata</div>
+          <div class="product-card-desc">Un paño fijo y uno rebatible. Herrajes en acero inoxidable plata. Vidrio templado 8 mm. Clásico y versátil.</div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-card-img-wrap">
+          <img src="https://www.mampara.com.ar/Mampara%20Rebatible%20de%20dos%20pa%C3%B1os%20en%20color%20negro.webp" alt="Rebatible 2 Paños — Negro" loading="lazy"/>
+        </div>
+        <div class="product-card-body">
+          <span class="prod-badge templado">Vidrio templado</span>
+          <div class="product-card-name">Rebatible 2 Paños — Negro</div>
+          <div class="product-card-desc">Un paño fijo y uno rebatible. Herrajes en negro mate. Vidrio templado 8 mm. Contemporáneo y elegante.</div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-card-img-wrap">
+          <img src="https://www.mampara.com.ar/Mampara%20Rebatible%20con%20perfil%20de%20amure.webp" alt="Rebatible · Brazo Lateral de Sujeción" loading="lazy"/>
+        </div>
+        <div class="product-card-body">
+          <span class="prod-badge">Vidrio laminado</span>
+          <div class="product-card-name">Rebatible · Brazo Lateral de Sujeción</div>
+          <div class="product-card-desc">Paño rebatible con brazo lateral de sujeción. Sin perfilería superior. Herrajes acero inoxidable. Vidrio laminado. Ultra minimalista.</div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-card-img-wrap">
+          <img src="https://www.mampara.com.ar/Mampara%20dos%20pa%C3%B1os%20con%20puerta%20color%20plata.webp" alt="Rebatible · Puerta de Abrir — Plata" loading="lazy"/>
+        </div>
+        <div class="product-card-body">
+          <span class="prod-badge templado">Vidrio templado</span>
+          <div class="product-card-name">Rebatible · Puerta de Abrir — Plata</div>
+          <div class="product-card-desc">Dos paños con puerta rebatible de apertura completa. Herrajes plata. Vidrio templado 8 mm. Amplia entrada.</div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-card-img-wrap">
+          <img src="https://www.mampara.com.ar/Mampara%20dos%20pa%C3%B1os%20con%20puerta%20en%20color%20negro.webp" alt="Rebatible · Puerta de Abrir — Negro" loading="lazy"/>
+        </div>
+        <div class="product-card-body">
+          <span class="prod-badge templado">Vidrio templado</span>
+          <div class="product-card-name">Rebatible · Puerta de Abrir — Negro</div>
+          <div class="product-card-desc">Dos paños con puerta rebatible de apertura completa. Herrajes negro mate. Vidrio templado 8 mm.</div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-card-img-wrap">
+          <img src="https://www.mampara.com.ar/Mampara%20Rebatible%20con%20puerta%20en%20cristal%20opaco.webp" alt="Rebatible · Puerta en Cristal Opaco" loading="lazy"/>
+        </div>
+        <div class="product-card-body">
+          <span class="prod-badge templado">Vidrio templado</span>
+          <div class="product-card-name">Rebatible · Puerta en Cristal Opaco</div>
+          <div class="product-card-desc">Dos paños con puerta rebatible en vidrio opaco. Privacidad total con diseño contemporáneo. Herrajes acero inoxidable.</div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-card-img-wrap">
+          <img src="https://www.mampara.com.ar/Mampara%20Rebatible%20para%20ba%C3%B1era%20en%20color%20plata.webp" alt="Rebatible para Bañera — Plata" loading="lazy"/>
+        </div>
+        <div class="product-card-body">
+          <span class="prod-badge templado">Vidrio templado</span>
+          <div class="product-card-name">Rebatible para Bañera — Plata</div>
+          <div class="product-card-desc">Diseñada para bañeras. Puerta rebatible en aluminio plata anodizado. Sellado hermético y diseño funcional.</div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-card-img-wrap">
+          <img src="https://www.mampara.com.ar/Mempara%20Rebatible%20para%20ba%C3%B1era%20en%20color%20negro.webp" alt="Rebatible para Bañera — Negro" loading="lazy"/>
+        </div>
+        <div class="product-card-body">
+          <span class="prod-badge templado">Vidrio templado</span>
+          <div class="product-card-name">Rebatible para Bañera — Negro</div>
+          <div class="product-card-desc">Diseñada para bañeras. Puerta rebatible en aluminio negro mate. Sellado hermético y diseño elegante.</div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-card-img-wrap">
+          <img src="https://www.mampara.com.ar/Mampara%20Rebatible%20color%20negro.webp" alt="Rebatible Simple — Negro" loading="lazy"/>
+        </div>
+        <div class="product-card-body">
+          <span class="prod-badge templado">Vidrio templado</span>
+          <div class="product-card-name">Rebatible Simple — Negro</div>
+          <div class="product-card-desc">Mampara rebatible en aluminio negro mate. Vidrio templado de seguridad. Para duchas de ingreso directo.</div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-card-img-wrap">
+          <img src="https://www.mampara.com.ar/Mampara%20Rebatible.webp" alt="Rebatible Simple — Plata" loading="lazy"/>
+        </div>
+        <div class="product-card-body">
+          <span class="prod-badge templado">Vidrio templado</span>
+          <div class="product-card-name">Rebatible Simple — Plata</div>
+          <div class="product-card-desc">Mampara rebatible en aluminio plata. Vidrio templado de seguridad. Clásica y funcional para cualquier baño.</div>
+        </div>
+      </div>
+
     </div>
   </section>
 
-  <!-- PLEGADIZAS -->
-  <section class="product-section reverse" id="plegadizas">
-    <div class="product-img">
-      <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=900&q=82" alt="Mamparas Plegadizas" loading="lazy"/>
-    </div>
-    <div class="product-info">
-      <div class="prod-counter">04</div>
-      <div class="prod-material">Vidrio templado</div>
-      <h2 class="prod-h2">Mamparas<em>Plegadizas</em></h2>
-      <p class="prod-desc">Sistema plegable tipo acordeón. Maximiza el espacio útil al abrir completamente hacia un lado. Fabricadas en vidrio templado de seguridad.</p>
-      <div class="prod-tags">
-        <span class="prod-tag">Vidrio templado</span>
-        <span class="prod-tag">Sistema acordeón</span>
-        <span class="prod-tag">Máximo espacio</span>
+  <!-- ── PLEGADIZAS ─────────────────────────────────────────── -->
+  <section class="cat-section" id="plegadizas">
+    <div class="cat-header">
+      <div>
+        <div class="cat-counter">04</div>
+        <div class="cat-material">Vidrio templado</div>
+        <h2 class="cat-h2">Mamparas<em>Plegadizas</em></h2>
       </div>
-      <a href="#contact" class="prod-link">Solicitar presupuesto</a>
+      <div class="cat-desc-wrap">
+        <p class="cat-desc">Sistema plegable tipo acordeón. Maximiza el espacio útil al abrir completamente hacia un lado. Fabricadas en vidrio templado de seguridad.</p>
+        <span class="cat-count">1 modelo disponible</span>
+      </div>
+    </div>
+    <div class="products-grid single">
+
+      <div class="product-card">
+        <div class="product-card-img-wrap">
+          <img src="https://www.mampara.com.ar/Mampara%20plegadiza.webp" alt="Plegadiza Bi-fold" loading="lazy"/>
+        </div>
+        <div class="product-card-body">
+          <span class="prod-badge templado">Vidrio templado</span>
+          <div class="product-card-name">Plegadiza Bi-fold</div>
+          <div class="product-card-desc">Sistema plegable en acordeón. Se repliega completamente hacia un lado liberando el acceso total a la ducha. Aluminio y vidrio templado 6 mm. La solución ideal para baños pequeños.</div>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -419,22 +554,10 @@
       <p class="stats-sub">Fabricamos y colocamos mamparas a medida en Capital Federal y Gran Buenos Aires.</p>
     </div>
     <div class="stats-numbers">
-      <div class="stat-item">
-        <div class="stat-n">100%</div>
-        <div class="stat-l">Fabricación a medida para cada espacio</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-n">2</div>
-        <div class="stat-l">Tipos de vidrio: laminado y templado de seguridad</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-n">+25</div>
-        <div class="stat-l">Modelos en múltiples terminaciones y colores</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-n">★</div>
-        <div class="stat-l">Instalación profesional y garantía en todos los productos</div>
-      </div>
+      <div class="stat-item"><div class="stat-n">100%</div><div class="stat-l">Fabricación a medida para cada espacio</div></div>
+      <div class="stat-item"><div class="stat-n">2</div><div class="stat-l">Tipos de vidrio: laminado y templado de seguridad</div></div>
+      <div class="stat-item"><div class="stat-n">+25</div><div class="stat-l">Modelos en múltiples terminaciones y colores</div></div>
+      <div class="stat-item"><div class="stat-n">★</div><div class="stat-l">Instalación profesional y garantía en todos los productos</div></div>
     </div>
   </section>
 
@@ -449,31 +572,13 @@
         Consultar por WhatsApp
       </a>
       <div class="contact-rows">
-        <div class="c-row">
-          <div class="c-dot"></div>
-          <div>
-            <div class="c-lbl">Dirección</div>
-            <div class="c-val">Galicia 1860 · C1416DHB<br>Ciudad Autónoma de Buenos Aires</div>
-          </div>
-        </div>
-        <div class="c-row">
-          <div class="c-dot"></div>
-          <div>
-            <div class="c-lbl">Teléfono</div>
-            <div class="c-val"><a href="tel:+541145810618">+54 11 4581-0618</a></div>
-          </div>
-        </div>
-        <div class="c-row">
-          <div class="c-dot"></div>
-          <div>
-            <div class="c-lbl">Email</div>
-            <div class="c-val"><a href="mailto:info@reflejar.com.ar">info@reflejar.com.ar</a></div>
-          </div>
-        </div>
+        <div class="c-row"><div class="c-dot"></div><div><div class="c-lbl">Dirección</div><div class="c-val">Galicia 1860 · C1416DHB<br>Ciudad Autónoma de Buenos Aires</div></div></div>
+        <div class="c-row"><div class="c-dot"></div><div><div class="c-lbl">Teléfono</div><div class="c-val"><a href="tel:+541145810618">+54 11 4581-0618</a></div></div></div>
+        <div class="c-row"><div class="c-dot"></div><div><div class="c-lbl">Email</div><div class="c-val"><a href="mailto:info@reflejar.com.ar">info@reflejar.com.ar</a></div></div></div>
       </div>
     </div>
     <div class="contact-img-col">
-      <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80" alt="Baño moderno con mampara" loading="lazy"/>
+      <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80" alt="Baño moderno" loading="lazy"/>
       <div class="contact-img-overlay"></div>
       <div class="contact-img-addr">
         <strong>REFLEJAR S.A.</strong>
