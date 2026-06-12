@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catálogo de Mamparas — REFLEJAR</title>
+  <meta name="description" content="Mamparas de vidrio a medida. Corredizas, fijas, rebatibles y plegadizas. Instalación incluida en Capital Federal y Gran Buenos Aires." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,200;0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --orange: #D84B2B;
+      --dark:   #0d0d0d;
+      --mid:    #555;
+      --muted:  #888;
+      --light:  #f7f6f4;
+      --white:  #fff;
+      --nav-h:  68px;
+    }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+    body {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      font-weight: 300;
+      color: var(--dark);
+      background: var(--white);
+      overflow-x: hidden;
+    }
+    a { text-decoration: none; color: inherit; }
+    em { font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 300; }
+
+    /* ── NAV ─────────────────────────────────────────────────── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      height: var(--nav-h);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 52px;
+      background: rgba(255,255,255,0.96);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      transition: box-shadow .3s;
+    }
+    nav.scrolled { box-shadow: 0 1px 24px rgba(0,0,0,0.07); }
+    .nav-logo svg { display: block; height: 32px; width: auto; }
+    .nav-links { display: flex; align-items: center; gap: 36px; }
+    .nav-links a {
+      font-size: 11px; font-weight: 400; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--mid);
+      transition: color .15s;
+    }
+    .nav-links a:hover { color: var(--dark); }
+    .nav-cta {
+      margin-left: 8px;
+      background: var(--orange) !important; color: var(--white) !important;
+      padding: 9px 20px; font-size: 11px !important; letter-spacing: 0.1em !important;
+      transition: opacity .15s !important;
+    }
+    .nav-cta:hover { opacity: .85; color: var(--white) !important; }
+
+    /* ── HERO ────────────────────────────────────────────────── */
+    #hero {
+      height: 100vh; min-height: 620px;
+      position: relative; overflow: hidden;
+      display: flex; align-items: flex-end;
+      padding: 0 10vw calc(var(--nav-h) + 64px);
+      background: var(--dark);
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background: url('https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat;
+      opacity: .28;
+    }
+    .hero-content { position: relative; width: 100%; }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 12px;
+      font-size: 10px; font-weight: 400; letter-spacing: .22em; text-transform: uppercase;
+      color: rgba(255,255,255,.45); margin-bottom: 28px;
+    }
+    .hero-eyebrow::before { content: ''; width: 32px; height: 1px; background: var(--orange); }
+    .hero-h1 {
+      font-size: clamp(52px, 7.5vw, 108px);
+      font-weight: 200; line-height: 1.0;
+      letter-spacing: -0.03em; color: var(--white);
+      margin-bottom: 6px;
+    }
+    .hero-h1-line2 {
+      font-size: clamp(56px, 8vw, 116px);
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-style: italic; font-weight: 300; line-height: 1.0;
+      letter-spacing: -0.01em; color: rgba(255,255,255,.75);
+      margin-bottom: 40px;
+    }
+    .hero-bottom {
+      display: flex; align-items: flex-end;
+      justify-content: space-between; flex-wrap: wrap; gap: 24px;
+    }
+    .hero-sub {
+      font-size: 14px; font-weight: 300; line-height: 1.8;
+      color: rgba(255,255,255,.45); max-width: 380px;
+    }
+    .hero-cta {
+      display: inline-flex; align-items: center; gap: 12px;
+      font-size: 11px; font-weight: 400; letter-spacing: .14em; text-transform: uppercase;
+      color: var(--white); white-space: nowrap;
+      transition: gap .2s;
+    }
+    .hero-cta::after { content: ''; width: 40px; height: 1px; background: var(--orange); transition: width .2s; }
+    .hero-cta:hover::after { width: 56px; }
+
+    /* ── PRODUCT SECTIONS ────────────────────────────────────── */
+    .product-section {
+      display: grid; grid-template-columns: 1fr 1fr;
+      min-height: 85vh;
+    }
+    .product-section.reverse .product-img { order: 2; }
+    .product-section.reverse .product-info { order: 1; }
+    .product-img {
+      position: relative; overflow: hidden;
+      min-height: 480px;
+    }
+    .product-img img {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform .9s cubic-bezier(.16,1,.3,1);
+    }
+    .product-section:hover .product-img img { transform: scale(1.05); }
+    .product-info {
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 80px 72px; background: var(--white);
+      position: relative;
+    }
+    .product-section:nth-child(odd) .product-info { background: var(--light); }
+    .prod-counter {
+      font-size: 10px; font-weight: 400; letter-spacing: .2em; text-transform: uppercase;
+      color: var(--muted); margin-bottom: 48px;
+      display: flex; align-items: center; gap: 16px;
+    }
+    .prod-counter::after { content: ''; flex: 1; max-width: 48px; height: 1px; background: currentColor; opacity: .4; }
+    .prod-material {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-style: italic; font-weight: 300;
+      font-size: 14px; color: var(--orange);
+      margin-bottom: 14px; letter-spacing: .04em;
+    }
+    .prod-h2 {
+      font-size: clamp(36px, 3.8vw, 56px);
+      font-weight: 200; letter-spacing: -.025em; line-height: 1.05;
+      color: var(--dark); margin-bottom: 28px;
+    }
+    .prod-h2 em {
+      font-size: 1.12em;
+      display: block; color: var(--dark);
+    }
+    .prod-desc {
+      font-size: 14px; font-weight: 300; line-height: 1.85;
+      color: var(--mid); max-width: 400px; margin-bottom: 36px;
+    }
+    .prod-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 44px; }
+    .prod-tag {
+      font-size: 10px; font-weight: 400; letter-spacing: .1em; text-transform: uppercase;
+      color: var(--muted); border: 1px solid rgba(0,0,0,.12);
+      padding: 5px 13px;
+    }
+    .prod-link {
+      display: inline-flex; align-items: center; gap: 12px;
+      font-size: 11px; font-weight: 400; letter-spacing: .14em; text-transform: uppercase;
+      color: var(--dark); transition: gap .2s;
+    }
+    .prod-link::after { content: ''; width: 32px; height: 1px; background: var(--orange); transition: width .2s; }
+    .prod-link:hover { gap: 18px; }
+    .prod-link:hover::after { width: 48px; }
+
+    /* ── STATS ───────────────────────────────────────────────── */
+    #stats {
+      padding: 0 10vw;
+      background: var(--dark);
+      overflow: hidden;
+    }
+    .stats-top {
+      padding: 88px 0 64px;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      display: flex; align-items: flex-end; justify-content: space-between; gap: 40px;
+    }
+    .stats-h2 {
+      font-size: clamp(28px, 3.2vw, 44px); font-weight: 200;
+      letter-spacing: -.02em; line-height: 1.15; color: var(--white);
+      max-width: 420px;
+    }
+    .stats-h2 em { font-size: 1.08em; color: rgba(255,255,255,.5); }
+    .stats-sub {
+      font-size: 13px; font-weight: 300; color: rgba(255,255,255,.35);
+      max-width: 320px; line-height: 1.8; text-align: right;
+    }
+    .stats-numbers {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      padding: 64px 0 88px;
+    }
+    .stat-item {
+      padding: 0 40px 0 0;
+      border-right: 1px solid rgba(255,255,255,.08);
+    }
+    .stat-item:first-child { padding-left: 0; }
+    .stat-item:last-child { border-right: none; padding-right: 0; }
+    .stat-n {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-weight: 300; font-size: 72px; line-height: 1;
+      color: var(--orange); letter-spacing: -.02em; margin-bottom: 12px;
+    }
+    .stat-l { font-size: 12px; font-weight: 300; color: rgba(255,255,255,.35); line-height: 1.6; }
+
+    /* ── CONTACT ─────────────────────────────────────────────── */
+    #contact {
+      display: grid; grid-template-columns: 1fr 1fr;
+      min-height: 60vh;
+    }
+    .contact-info-col {
+      padding: 88px 72px;
+      display: flex; flex-direction: column; justify-content: center;
+      background: var(--white);
+    }
+    .contact-eyebrow {
+      font-size: 10px; font-weight: 400; letter-spacing: .22em; text-transform: uppercase;
+      color: var(--orange); margin-bottom: 28px;
+      display: flex; align-items: center; gap: 12px;
+    }
+    .contact-eyebrow::before { content: ''; width: 24px; height: 1px; background: var(--orange); }
+    .contact-h2 {
+      font-size: clamp(28px, 3vw, 44px); font-weight: 200;
+      letter-spacing: -.02em; line-height: 1.1; color: var(--dark);
+      margin-bottom: 20px;
+    }
+    .contact-h2 em { font-size: 1.08em; }
+    .contact-desc { font-size: 14px; font-weight: 300; line-height: 1.8; color: var(--mid); margin-bottom: 40px; max-width: 380px; }
+    .wa-btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: #25D366; color: var(--white);
+      padding: 13px 26px; font-size: 11px; font-weight: 400; letter-spacing: .1em; text-transform: uppercase;
+      margin-bottom: 48px; transition: opacity .15s;
+    }
+    .wa-btn:hover { opacity: .88; }
+    .contact-rows { display: flex; flex-direction: column; gap: 22px; }
+    .c-row { display: flex; align-items: flex-start; gap: 16px; }
+    .c-lbl { font-size: 10px; font-weight: 400; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+    .c-val { font-size: 14px; font-weight: 300; color: var(--dark); line-height: 1.5; }
+    .c-val a { color: var(--orange); }
+    .c-val a:hover { text-decoration: underline; }
+    .c-dot {
+      width: 4px; height: 4px; background: var(--orange); border-radius: 50%;
+      margin-top: 8px; flex-shrink: 0;
+    }
+    .contact-img-col {
+      position: relative; overflow: hidden;
+      background: var(--light);
+    }
+    .contact-img-col img {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%; object-fit: cover;
+      opacity: .6;
+    }
+    .contact-img-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(13,13,13,.55) 30%, transparent);
+    }
+    .contact-img-addr {
+      position: absolute; bottom: 48px; left: 48px; right: 48px;
+      color: rgba(255,255,255,.7); font-size: 13px; font-weight: 300; line-height: 1.7;
+    }
+    .contact-img-addr strong { display: block; font-size: 15px; font-weight: 400; color: var(--white); margin-bottom: 6px; }
+
+    /* ── FOOTER ──────────────────────────────────────────────── */
+    footer {
+      background: var(--dark); padding: 36px 52px;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 16px;
+      border-top: 1px solid rgba(255,255,255,.06);
+    }
+    .footer-logo svg { height: 20px; width: auto; display: block; }
+    footer p { font-size: 11px; font-weight: 300; color: rgba(255,255,255,.25); letter-spacing: .05em; }
+    .footer-links { display: flex; gap: 28px; }
+    .footer-links a { font-size: 11px; font-weight: 300; color: rgba(255,255,255,.25); transition: color .15s; }
+    .footer-links a:hover { color: var(--orange); }
+
+    /* ── RESPONSIVE ──────────────────────────────────────────── */
+    @media (max-width: 960px) {
+      nav { padding: 0 28px; }
+      .nav-links a:not(.nav-cta) { display: none; }
+      #hero { padding: 0 28px calc(var(--nav-h) + 44px); align-items: flex-end; }
+      .product-section { grid-template-columns: 1fr; min-height: auto; }
+      .product-section.reverse .product-img,
+      .product-section.reverse .product-info { order: unset; }
+      .product-img { min-height: 300px; }
+      .product-info { padding: 52px 32px; }
+      #stats .stats-top { flex-direction: column; align-items: flex-start; }
+      .stats-sub { text-align: left; }
+      .stats-numbers { grid-template-columns: 1fr 1fr; gap: 40px; }
+      .stat-item { border: none; padding: 0; }
+      #contact { grid-template-columns: 1fr; }
+      .contact-info-col { padding: 56px 32px; }
+      .contact-img-col { min-height: 300px; }
+      footer { flex-direction: column; align-items: flex-start; padding: 32px 28px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <a href="#hero" class="nav-logo">
+      <svg viewBox="0 0 420 72" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0" y="27" width="15" height="15" fill="#D84B2B"/>
+        <rect x="24" y="4" width="4" height="64" fill="#1a1a1a"/>
+        <rect x="36" y="34" width="12" height="12" fill="#1a1a1a"/>
+        <text x="64" y="56" font-family="'DM Sans','Helvetica Neue',Arial,sans-serif" font-weight="400" font-size="46" fill="#1a1a1a" letter-spacing="2">REFLEJAR</text>
+      </svg>
+    </a>
+    <div class="nav-links">
+      <a href="#corredizas">Corredizas</a>
+      <a href="#fijas">Fijas</a>
+      <a href="#rebatibles">Rebatibles</a>
+      <a href="#plegadizas">Plegadizas</a>
+      <a href="#contact" class="nav-cta">Consultar</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <div class="hero-eyebrow">Fabricación a medida · Instalación incluida</div>
+      <div class="hero-h1">Mamparas</div>
+      <div class="hero-h1-line2">de Vidrio</div>
+      <div class="hero-bottom">
+        <p class="hero-sub">Diseño, calidad y funcionalidad. Soluciones en vidrio laminado y templado para baños modernos y clásicos.</p>
+        <a href="#corredizas" class="hero-cta">Ver catálogo</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CORREDIZAS -->
+  <section class="product-section" id="corredizas">
+    <div class="product-img">
+      <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&fit=crop&w=900&q=82" alt="Mamparas Corredizas" loading="lazy"/>
+    </div>
+    <div class="product-info">
+      <div class="prod-counter">01</div>
+      <div class="prod-material">Vidrio laminado</div>
+      <h2 class="prod-h2">Mamparas<em>Corredizas</em></h2>
+      <p class="prod-desc">Sistema de apertura deslizante. Ideal cuando el espacio no permite abrir una puerta hacia afuera. Fabricadas en vidrio laminado de alta resistencia.</p>
+      <div class="prod-tags">
+        <span class="prod-tag">Vidrio laminado</span>
+        <span class="prod-tag">A medida</span>
+        <span class="prod-tag">Apertura deslizante</span>
+      </div>
+      <a href="#contact" class="prod-link">Solicitar presupuesto</a>
+    </div>
+  </section>
+
+  <!-- FIJAS -->
+  <section class="product-section reverse" id="fijas">
+    <div class="product-img">
+      <img src="https://images.unsplash.com/photo-1620626011761-996317702519?auto=format&fit=crop&w=900&q=82" alt="Mamparas Fijas" loading="lazy"/>
+    </div>
+    <div class="product-info">
+      <div class="prod-counter">02</div>
+      <div class="prod-material">Vidrio laminado</div>
+      <h2 class="prod-h2">Mamparas<em>Fijas</em></h2>
+      <p class="prod-desc">Paneles estáticos con mínima perfilería. Máxima transparencia y elegancia. Disponibles en vidrio transparente, laminado gris, bronce, opaco y acanalado.</p>
+      <div class="prod-tags">
+        <span class="prod-tag">Transparente</span>
+        <span class="prod-tag">Gris · Bronce</span>
+        <span class="prod-tag">Opaco · Acanalado</span>
+      </div>
+      <a href="#contact" class="prod-link">Solicitar presupuesto</a>
+    </div>
+  </section>
+
+  <!-- REBATIBLES -->
+  <section class="product-section" id="rebatibles">
+    <div class="product-img">
+      <img src="https://images.unsplash.com/photo-1507652955-f3dcef5a3be5?auto=format&fit=crop&w=900&q=82" alt="Mamparas Rebatibles" loading="lazy"/>
+    </div>
+    <div class="product-info">
+      <div class="prod-counter">03</div>
+      <div class="prod-material">Vidrio templado</div>
+      <h2 class="prod-h2">Mamparas<em>Rebatibles</em></h2>
+      <p class="prod-desc">Apertura tipo puerta. Amplia variedad en dos y tres paños, herrajes en plata y negro. Fabricadas en vidrio templado de seguridad.</p>
+      <div class="prod-tags">
+        <span class="prod-tag">Vidrio templado</span>
+        <span class="prod-tag">2 y 3 paños</span>
+        <span class="prod-tag">Herrajes plata / negro</span>
+      </div>
+      <a href="#contact" class="prod-link">Solicitar presupuesto</a>
+    </div>
+  </section>
+
+  <!-- PLEGADIZAS -->
+  <section class="product-section reverse" id="plegadizas">
+    <div class="product-img">
+      <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=900&q=82" alt="Mamparas Plegadizas" loading="lazy"/>
+    </div>
+    <div class="product-info">
+      <div class="prod-counter">04</div>
+      <div class="prod-material">Vidrio templado</div>
+      <h2 class="prod-h2">Mamparas<em>Plegadizas</em></h2>
+      <p class="prod-desc">Sistema plegable tipo acordeón. Maximiza el espacio útil al abrir completamente hacia un lado. Fabricadas en vidrio templado de seguridad.</p>
+      <div class="prod-tags">
+        <span class="prod-tag">Vidrio templado</span>
+        <span class="prod-tag">Sistema acordeón</span>
+        <span class="prod-tag">Máximo espacio</span>
+      </div>
+      <a href="#contact" class="prod-link">Solicitar presupuesto</a>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section id="stats">
+    <div class="stats-top">
+      <h2 class="stats-h2">Calidad y experiencia<br><em>en cada proyecto</em></h2>
+      <p class="stats-sub">Fabricamos y colocamos mamparas a medida en Capital Federal y Gran Buenos Aires.</p>
+    </div>
+    <div class="stats-numbers">
+      <div class="stat-item">
+        <div class="stat-n">100%</div>
+        <div class="stat-l">Fabricación a medida para cada espacio</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-n">2</div>
+        <div class="stat-l">Tipos de vidrio: laminado y templado de seguridad</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-n">+25</div>
+        <div class="stat-l">Modelos en múltiples terminaciones y colores</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-n">★</div>
+        <div class="stat-l">Instalación profesional y garantía en todos los productos</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="contact-info-col">
+      <div class="contact-eyebrow">Contacto</div>
+      <h2 class="contact-h2">Hablemos de<br><em>tu proyecto</em></h2>
+      <p class="contact-desc">Visitá nuestro local o escribinos por WhatsApp. Te asesoramos sin cargo y te enviamos presupuesto a medida.</p>
+      <a href="https://wa.me/541145810618?text=Hola!%20Quisiera%20consultar%20por%20una%20mampara%20Reflejar." class="wa-btn" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.978-1.306A9.943 9.943 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm4.93 13.452c-.248.694-1.435 1.328-2.006 1.413-.512.077-1.16.109-1.871-.118-.432-.136-.985-.319-1.694-.625-2.981-1.287-4.928-4.289-5.077-4.487-.148-.199-1.213-1.612-1.213-3.074 0-1.463.768-2.182 1.04-2.479.272-.298.594-.372.792-.372.199 0 .397.002.57.01.182.01.427-.069.669.51.247.595.841 2.058.916 2.207.075.149.124.322.025.52-.1.199-.149.323-.298.497-.148.173-.312.387-.446.52-.148.148-.303.309-.13.606.173.298.77 1.271 1.653 2.059 1.135 1.012 2.093 1.325 2.39 1.475.297.148.471.124.644-.075.173-.198.743-.867.94-1.164.199-.298.397-.249.67-.15.272.1 1.733.818 2.03.967.298.149.496.223.57.347.075.124.075.719-.173 1.413z"/></svg>
+        Consultar por WhatsApp
+      </a>
+      <div class="contact-rows">
+        <div class="c-row">
+          <div class="c-dot"></div>
+          <div>
+            <div class="c-lbl">Dirección</div>
+            <div class="c-val">Galicia 1860 · C1416DHB<br>Ciudad Autónoma de Buenos Aires</div>
+          </div>
+        </div>
+        <div class="c-row">
+          <div class="c-dot"></div>
+          <div>
+            <div class="c-lbl">Teléfono</div>
+            <div class="c-val"><a href="tel:+541145810618">+54 11 4581-0618</a></div>
+          </div>
+        </div>
+        <div class="c-row">
+          <div class="c-dot"></div>
+          <div>
+            <div class="c-lbl">Email</div>
+            <div class="c-val"><a href="mailto:info@reflejar.com.ar">info@reflejar.com.ar</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-img-col">
+      <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80" alt="Baño moderno con mampara" loading="lazy"/>
+      <div class="contact-img-overlay"></div>
+      <div class="contact-img-addr">
+        <strong>REFLEJAR S.A.</strong>
+        Galicia 1860 · C1416DHB<br>
+        Ciudad Autónoma de Buenos Aires · Argentina<br>
+        Lun–Vie 8:00 a 16:00 h
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">
+      <svg viewBox="0 0 420 72" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0" y="27" width="15" height="15" fill="#D84B2B"/>
+        <rect x="24" y="4" width="4" height="64" fill="rgba(255,255,255,.4)"/>
+        <rect x="36" y="34" width="12" height="12" fill="rgba(255,255,255,.4)"/>
+        <text x="64" y="56" font-family="'DM Sans','Helvetica Neue',Arial,sans-serif" font-weight="400" font-size="46" fill="rgba(255,255,255,.4)" letter-spacing="2">REFLEJAR</text>
+      </svg>
+    </div>
+    <p>Galicia 1860 · C1416DHB · Buenos Aires · Argentina · +54 11 4581-0618</p>
+    <div class="footer-links">
+      <a href="https://www.reflejar.com.ar" target="_blank" rel="noopener">reflejar.com.ar</a>
+      <a href="mailto:info@reflejar.com.ar">info@reflejar.com.ar</a>
+    </div>
+  </footer>
+
+  <script>
+    const nb = document.getElementById('navbar');
+    window.addEventListener('scroll', () => nb.classList.toggle('scrolled', scrollY > 24), {passive:true});
+  </script>
+</body>
+</html>
