@@ -1,10 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 72" width="420" height="72">
-  <!-- Orange-red filled square (left dot) -->
-  <rect x="0" y="28" width="15" height="15" fill="#D84B2B"/>
-  <!-- Vertical black line (center mark) -->
-  <rect x="24" y="4" width="4" height="64" fill="#1a1a1a"/>
-  <!-- Black filled square (right dot) -->
-  <rect x="36" y="34" width="12" height="12" fill="#1a1a1a"/>
-  <!-- REFLEJAR text -->
-  <text x="64" y="56" font-family="'Helvetica Neue', Arial, Helvetica, sans-serif" font-weight="700" font-size="48" fill="#D84B2B" letter-spacing="1.5">REFLEJAR</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 68" width="420" height="68">
+  <!-- orange dot (left of vertical line) -->
+  <rect x="0" y="22" width="11" height="11" fill="#D84B2B"/>
+  <!-- vertical black line -->
+  <rect x="20" y="4" width="3.5" height="60" fill="#1a1a1a"/>
+  <!-- black dot (right of vertical line) -->
+  <rect x="30" y="30" width="11" height="11" fill="#1a1a1a"/>
+  <!-- REFLEJAR text in orange -->
+  <text x="54" y="52" font-family="'Helvetica Neue', Arial, Helvetica, sans-serif" font-weight="500" font-size="44" fill="#D84B2B" letter-spacing="1">REFLEJAR</text>
 </svg>

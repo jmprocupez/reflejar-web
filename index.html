@@ -44,10 +44,10 @@
 
     /* ── HERO ────────────────────────────────────────────────── */
     #hero {
-      height: 72vh; min-height: 520px;
+      height: 80vh; min-height: 580px;
       position: relative; overflow: hidden;
       display: flex; align-items: flex-end;
-      padding: 0 10vw calc(var(--nav-h) + 52px);
+      padding: 0 10vw 72px;
       background: var(--dark);
     }
     .hero-bg {
@@ -56,8 +56,8 @@
       opacity: .28;
     }
     .hero-content { position: relative; width: 100%; }
-    .hero-eyebrow { display: inline-flex; align-items: center; gap: 12px; font-size: 10px; font-weight: 400; letter-spacing: .22em; text-transform: uppercase; color: rgba(255,255,255,.45); margin-bottom: 28px; }
-    .hero-eyebrow::before { content: ''; width: 32px; height: 1px; background: var(--orange); }
+    .hero-eyebrow { position: absolute; top: calc(var(--nav-h) + 36px); left: 10vw; right: 10vw; display: inline-flex; align-items: center; gap: 12px; font-size: 14px; font-weight: 300; letter-spacing: .05em; color: rgba(255,255,255,.45); }
+    .hero-eyebrow::before { content: ''; width: 32px; height: 1px; background: var(--orange); flex-shrink: 0; }
     .hero-h1 { font-size: clamp(48px, 7vw, 100px); font-weight: 200; line-height: 1.0; letter-spacing: -0.03em; color: var(--white); margin-bottom: 6px; }
     .hero-h1-2 { font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 300; font-size: clamp(52px, 7.5vw, 108px); line-height: 1.0; letter-spacing: -0.01em; color: rgba(255,255,255,.7); margin-bottom: 36px; }
     .hero-bottom { display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: 24px; }
@@ -151,7 +151,8 @@
     @media (max-width: 960px) {
       nav { padding: 0 28px; }
       .nav-links a:not(.nav-cta) { display: none; }
-      #hero { padding: 0 28px calc(var(--nav-h) + 44px); }
+      #hero { padding: 0 28px 64px; }
+      .hero-eyebrow { left: 28px; right: 28px; }
       .cat-header { grid-template-columns: 1fr; gap: 24px; padding: 0 6vw; margin-bottom: 36px; }
       .products-grid { padding: 0 6vw; }
       #stats .stats-top { flex-direction: column; align-items: flex-start; }
@@ -170,11 +171,15 @@
   <!-- NAV -->
   <nav id="navbar">
     <a href="#hero" class="nav-logo">
-      <svg viewBox="0 0 420 72" xmlns="http://www.w3.org/2000/svg">
-        <rect x="0" y="27" width="15" height="15" fill="#D84B2B"/>
-        <rect x="24" y="4" width="4" height="64" fill="#1a1a1a"/>
-        <rect x="36" y="34" width="12" height="12" fill="#1a1a1a"/>
-        <text x="64" y="56" font-family="'DM Sans','Helvetica Neue',Arial,sans-serif" font-weight="400" font-size="46" fill="#1a1a1a" letter-spacing="2">REFLEJAR</text>
+      <svg viewBox="0 0 420 68" xmlns="http://www.w3.org/2000/svg">
+        <!-- orange dot (left of line) -->
+        <rect x="0" y="22" width="11" height="11" fill="#D84B2B"/>
+        <!-- vertical black line -->
+        <rect x="20" y="4" width="3.5" height="60" fill="#1a1a1a"/>
+        <!-- black dot (right of line) -->
+        <rect x="30" y="30" width="11" height="11" fill="#1a1a1a"/>
+        <!-- REFLEJAR in orange -->
+        <text x="54" y="52" font-family="'DM Sans','Helvetica Neue',Arial,sans-serif" font-weight="500" font-size="44" fill="#D84B2B" letter-spacing="1">REFLEJAR</text>
       </svg>
     </a>
     <div class="nav-links">
@@ -189,8 +194,8 @@
   <!-- HERO -->
   <section id="hero">
     <div class="hero-bg"></div>
+    <div class="hero-eyebrow">Fabricación a medida · Instalación incluida</div>
     <div class="hero-content">
-      <div class="hero-eyebrow">Fabricación a medida · Instalación incluida</div>
       <div class="hero-h1">Mamparas</div>
       <div class="hero-h1-2">de Vidrio</div>
       <div class="hero-bottom">
@@ -209,7 +214,7 @@
         <h2 class="cat-h2">Mamparas<em>Corredizas</em></h2>
       </div>
       <div class="cat-desc-wrap">
-        <p class="cat-desc">Sistema de apertura deslizante. Ideal cuando el espacio no permite abrir una puerta hacia afuera. Fabricadas en vidrio laminado de alta resistencia.</p>
+        <p class="cat-desc">Sistema de apertura deslizante. Ideal cuando el espacio no permite abrir una puerta hacia adentro o afuera. Fabricadas en vidrio laminado de alta resistencia.</p>
         <span class="cat-count">4 modelos disponibles</span>
       </div>
     </div>
@@ -220,6 +225,7 @@
           <img src="https://www.mampara.com.ar/Mampara%20Corrediza%20de%20cuatro%20pa%C3%B1os%20en%20color%20aluminio.webp" alt="Corrediza 4 Paños — Aluminio Plata" loading="lazy"/>
         </div>
         <div class="product-card-body">
+
           <span class="prod-badge">Vidrio laminado</span>
           <div class="product-card-name">Corrediza 4 Paños — Aluminio Plata</div>
           <div class="product-card-desc">Dos paños fijos y dos móviles. Perfilería en aluminio anodizado color plata. Vidrio laminado. Ideal para bañeras o duchas amplias.</div>
@@ -231,6 +237,7 @@
           <img src="https://www.mampara.com.ar/Mampara%20corrediza%20de%20cuatro%20pa%C3%B1os%20en%20color%20negro.webp" alt="Corrediza 4 Paños — Negro Mate" loading="lazy"/>
         </div>
         <div class="product-card-body">
+
           <span class="prod-badge">Vidrio laminado</span>
           <div class="product-card-name">Corrediza 4 Paños — Negro Mate</div>
           <div class="product-card-desc">Dos paños fijos y dos móviles. Perfilería en aluminio negro mate. Vidrio laminado. Estética moderna e industrial.</div>
@@ -242,6 +249,7 @@
           <img src="https://www.mampara.com.ar/Mampara%20corrediza%20de%20dos%20pa%C3%B1os%20en%20Aluminio.webp" alt="Corrediza 2 Paños — Aluminio Plata" loading="lazy"/>
         </div>
         <div class="product-card-body">
+
           <span class="prod-badge">Vidrio laminado</span>
           <div class="product-card-name">Corrediza 2 Paños — Aluminio Plata</div>
           <div class="product-card-desc">Un paño fijo y uno móvil deslizante. Aluminio anodizado color plata. Vidrio laminado. Solución práctica para duchas medianas.</div>
@@ -253,6 +261,7 @@
           <img src="https://www.mampara.com.ar/Mampara%20corrediza%20de%20dos%20pa%C3%B1os%20en%20color%20negro.webp" alt="Corrediza 2 Paños — Negro Mate" loading="lazy"/>
         </div>
         <div class="product-card-body">
+
           <span class="prod-badge">Vidrio laminado</span>
           <div class="product-card-name">Corrediza 2 Paños — Negro Mate</div>
           <div class="product-card-desc">Un paño fijo y uno móvil deslizante. Aluminio negro mate. Vidrio laminado. Diseño moderno para duchas medianas.</div>
@@ -282,6 +291,7 @@
           <img src="https://www.mampara.com.ar/Mampara%20fija%20con%20aluminio%20plata.webp" alt="Fija · Perfil U — Plata" loading="lazy"/>
         </div>
         <div class="product-card-body">
+
           <span class="prod-badge">Vidrio laminado</span>
           <div class="product-card-name">Fija · Perfil U — Plata</div>
           <div class="product-card-desc">Paño fijo con perfil U en base y lateral. Aluminio anodizado color plata. Vidrio laminado. Clásico y funcional.</div>
@@ -293,6 +303,7 @@
           <img src="https://www.mampara.com.ar/Mampara%20Fija%20con%20aluminio%20negro.webp" alt="Fija · Perfil U — Negro" loading="lazy"/>
         </div>
         <div class="product-card-body">
+
           <span class="prod-badge">Vidrio laminado</span>
           <div class="product-card-name">Fija · Perfil U — Negro</div>
           <div class="product-card-desc">Paño fijo con perfil U en base y lateral. Aluminio negro mate. Vidrio laminado. Estética contemporánea y sofisticada.</div>
@@ -304,6 +315,7 @@
           <img src="https://www.mampara.com.ar/Mampara%20Fija%20con%20aluminio%20blanco.webp" alt="Fija · Perfil U — Blanco" loading="lazy"/>
         </div>
         <div class="product-card-body">
+
           <span class="prod-badge">Vidrio laminado</span>
           <div class="product-card-name">Fija · Perfil U — Blanco</div>
           <div class="product-card-desc">Paño fijo con perfil U en base y lateral. Aluminio color blanco. Vidrio laminado. Ideal para baños claros y luminosos.</div>
@@ -315,6 +327,7 @@
           <img src="https://www.mampara.com.ar/Mampara%20Fija%20en%20aluminio%20con%20brazo%20tensor.webp" alt="Fija · Brazo Tensor — Plata" loading="lazy"/>
         </div>
         <div class="product-card-body">
+
           <span class="prod-badge">Vidrio laminado</span>
           <div class="product-card-name">Fija · Brazo Tensor — Plata</div>
           <div class="product-card-desc">Paño fijo con perfil U más brazo tensor superior. Vidrio laminado. Máxima estabilidad sin pared lateral completa.</div>
@@ -326,6 +339,7 @@
           <img src="https://www.mampara.com.ar/Mampara%20Fija%20en%20vidrio%20acanalado.webp" alt="Fija · Vidrio Acanalado" loading="lazy"/>
         </div>
         <div class="product-card-body">
+
           <span class="prod-badge">Vidrio laminado</span>
           <div class="product-card-name">Fija · Vidrio Acanalado</div>
           <div class="product-card-desc">Paño fijo en vidrio acanalado que difumina la visión aportando privacidad. Aluminio. Ideal para baños compartidos.</div>
@@ -337,6 +351,7 @@
           <img src="https://www.mampara.com.ar/Mampara%20Fija%20en%20vidrio%20laminado%20bronce.webp" alt="Fija · Laminado Bronce" loading="lazy"/>
         </div>
         <div class="product-card-body">
+
           <span class="prod-badge">Vidrio laminado</span>
           <div class="product-card-name">Fija · Laminado Bronce</div>
           <div class="product-card-desc">Paño fijo en vidrio laminado tono bronce. Acabado cálido y elegante. Integra con mármoles y cerámicas en tonos terrosos.</div>
@@ -348,6 +363,7 @@
           <img src="https://www.mampara.com.ar/Mampara%20Fija%20en%20vidrio%20laminado%20gris.webp" alt="Fija · Laminado Gris" loading="lazy"/>
         </div>
         <div class="product-card-body">
+
           <span class="prod-badge">Vidrio laminado</span>
           <div class="product-card-name">Fija · Laminado Gris</div>
           <div class="product-card-desc">Paño fijo en vidrio laminado tono gris. Estética sobria y moderna. Aporta privacidad parcial sin sacrificar luz.</div>
@@ -359,6 +375,7 @@
           <img src="https://www.mampara.com.ar/Mampara%20Fija%20en%20vidrio%20laminado%20opaco.webp" alt="Fija · Laminado Opaco" loading="lazy"/>
         </div>
         <div class="product-card-body">
+
           <span class="prod-badge">Vidrio laminado</span>
           <div class="product-card-name">Fija · Laminado Opaco</div>
           <div class="product-card-desc">Paño fijo en vidrio laminado opaco. Privacidad total. Aluminio anodizado. Ideal para baños compartidos o ambientes íntimos.</div>
@@ -388,6 +405,7 @@
           <img src="https://www.mampara.com.ar/Mampara%20Rebatible%20de%20tres%20pa%C3%B1os%20en%20color%20plata.webp" alt="Rebatible 3 Paños — Plata" loading="lazy"/>
         </div>
         <div class="product-card-body">
+
           <span class="prod-badge templado">Vidrio templado</span>
           <div class="product-card-name">Rebatible 3 Paños — Plata</div>
           <div class="product-card-desc">Dos paños fijos y uno rebatible. Herrajes en acero inoxidable plata. Vidrio templado 8 mm. Amplia abertura de acceso.</div>
@@ -399,6 +417,7 @@
           <img src="https://www.mampara.com.ar/Mampara%20Rebatible%20de%20tres%20pa%C3%B1os%20en%20color%20negro.webp" alt="Rebatible 3 Paños — Negro" loading="lazy"/>
         </div>
         <div class="product-card-body">
+
           <span class="prod-badge templado">Vidrio templado</span>
           <div class="product-card-name">Rebatible 3 Paños — Negro</div>
           <div class="product-card-desc">Dos paños fijos y uno rebatible. Herrajes en negro mate. Vidrio templado 8 mm. Diseño premium y sofisticado.</div>
@@ -410,6 +429,7 @@
           <img src="https://www.mampara.com.ar/Mampara%20Rebatible%20de%20dos%20pa%C3%B1os%20en%20color%20plata.webp" alt="Rebatible 2 Paños — Plata" loading="lazy"/>
         </div>
         <div class="product-card-body">
+
           <span class="prod-badge templado">Vidrio templado</span>
           <div class="product-card-name">Rebatible 2 Paños — Plata</div>
           <div class="product-card-desc">Un paño fijo y uno rebatible. Herrajes en acero inoxidable plata. Vidrio templado 8 mm. Clásico y versátil.</div>
@@ -421,6 +441,7 @@
           <img src="https://www.mampara.com.ar/Mampara%20Rebatible%20de%20dos%20pa%C3%B1os%20en%20color%20negro.webp" alt="Rebatible 2 Paños — Negro" loading="lazy"/>
         </div>
         <div class="product-card-body">
+
           <span class="prod-badge templado">Vidrio templado</span>
           <div class="product-card-name">Rebatible 2 Paños — Negro</div>
           <div class="product-card-desc">Un paño fijo y uno rebatible. Herrajes en negro mate. Vidrio templado 8 mm. Contemporáneo y elegante.</div>
@@ -432,6 +453,7 @@
           <img src="https://www.mampara.com.ar/Mampara%20Rebatible%20con%20perfil%20de%20amure.webp" alt="Rebatible · Brazo Lateral de Sujeción" loading="lazy"/>
         </div>
         <div class="product-card-body">
+
           <span class="prod-badge">Vidrio laminado</span>
           <div class="product-card-name">Rebatible · Brazo Lateral de Sujeción</div>
           <div class="product-card-desc">Paño rebatible con brazo lateral de sujeción. Sin perfilería superior. Herrajes acero inoxidable. Vidrio laminado. Ultra minimalista.</div>
@@ -443,6 +465,7 @@
           <img src="https://www.mampara.com.ar/Mampara%20dos%20pa%C3%B1os%20con%20puerta%20color%20plata.webp" alt="Rebatible · Puerta de Abrir — Plata" loading="lazy"/>
         </div>
         <div class="product-card-body">
+
           <span class="prod-badge templado">Vidrio templado</span>
           <div class="product-card-name">Rebatible · Puerta de Abrir — Plata</div>
           <div class="product-card-desc">Dos paños con puerta rebatible de apertura completa. Herrajes plata. Vidrio templado 8 mm. Amplia entrada.</div>
@@ -454,6 +477,7 @@
           <img src="https://www.mampara.com.ar/Mampara%20dos%20pa%C3%B1os%20con%20puerta%20en%20color%20negro.webp" alt="Rebatible · Puerta de Abrir — Negro" loading="lazy"/>
         </div>
         <div class="product-card-body">
+
           <span class="prod-badge templado">Vidrio templado</span>
           <div class="product-card-name">Rebatible · Puerta de Abrir — Negro</div>
           <div class="product-card-desc">Dos paños con puerta rebatible de apertura completa. Herrajes negro mate. Vidrio templado 8 mm.</div>
@@ -465,6 +489,7 @@
           <img src="https://www.mampara.com.ar/Mampara%20Rebatible%20con%20puerta%20en%20cristal%20opaco.webp" alt="Rebatible · Puerta en Cristal Opaco" loading="lazy"/>
         </div>
         <div class="product-card-body">
+
           <span class="prod-badge templado">Vidrio templado</span>
           <div class="product-card-name">Rebatible · Puerta en Cristal Opaco</div>
           <div class="product-card-desc">Dos paños con puerta rebatible en vidrio opaco. Privacidad total con diseño contemporáneo. Herrajes acero inoxidable.</div>
@@ -476,6 +501,7 @@
           <img src="https://www.mampara.com.ar/Mampara%20Rebatible%20para%20ba%C3%B1era%20en%20color%20plata.webp" alt="Rebatible para Bañera — Plata" loading="lazy"/>
         </div>
         <div class="product-card-body">
+
           <span class="prod-badge templado">Vidrio templado</span>
           <div class="product-card-name">Rebatible para Bañera — Plata</div>
           <div class="product-card-desc">Diseñada para bañeras. Puerta rebatible en aluminio plata anodizado. Sellado hermético y diseño funcional.</div>
@@ -487,6 +513,7 @@
           <img src="https://www.mampara.com.ar/Mempara%20Rebatible%20para%20ba%C3%B1era%20en%20color%20negro.webp" alt="Rebatible para Bañera — Negro" loading="lazy"/>
         </div>
         <div class="product-card-body">
+
           <span class="prod-badge templado">Vidrio templado</span>
           <div class="product-card-name">Rebatible para Bañera — Negro</div>
           <div class="product-card-desc">Diseñada para bañeras. Puerta rebatible en aluminio negro mate. Sellado hermético y diseño elegante.</div>
@@ -498,6 +525,7 @@
           <img src="https://www.mampara.com.ar/Mampara%20Rebatible%20color%20negro.webp" alt="Rebatible Simple — Negro" loading="lazy"/>
         </div>
         <div class="product-card-body">
+
           <span class="prod-badge templado">Vidrio templado</span>
           <div class="product-card-name">Rebatible Simple — Negro</div>
           <div class="product-card-desc">Mampara rebatible en aluminio negro mate. Vidrio templado de seguridad. Para duchas de ingreso directo.</div>
@@ -509,6 +537,7 @@
           <img src="https://www.mampara.com.ar/Mampara%20Rebatible.webp" alt="Rebatible Simple — Plata" loading="lazy"/>
         </div>
         <div class="product-card-body">
+
           <span class="prod-badge templado">Vidrio templado</span>
           <div class="product-card-name">Rebatible Simple — Plata</div>
           <div class="product-card-desc">Mampara rebatible en aluminio plata. Vidrio templado de seguridad. Clásica y funcional para cualquier baño.</div>
@@ -538,6 +567,7 @@
           <img src="https://www.mampara.com.ar/Mampara%20plegadiza.webp" alt="Plegadiza Bi-fold" loading="lazy"/>
         </div>
         <div class="product-card-body">
+
           <span class="prod-badge templado">Vidrio templado</span>
           <div class="product-card-name">Plegadiza Bi-fold</div>
           <div class="product-card-desc">Sistema plegable en acordeón. Se repliega completamente hacia un lado liberando el acceso total a la ducha. Aluminio y vidrio templado 6 mm. La solución ideal para baños pequeños.</div>
@@ -567,13 +597,13 @@
       <div class="contact-eyebrow">Contacto</div>
       <h2 class="contact-h2">Hablemos de<br><em>tu proyecto</em></h2>
       <p class="contact-desc">Visitá nuestro local o escribinos por WhatsApp. Te asesoramos sin cargo y te enviamos presupuesto a medida.</p>
-      <a href="https://wa.me/541145810618?text=Hola!%20Quisiera%20consultar%20por%20una%20mampara%20Reflejar." class="wa-btn" target="_blank" rel="noopener">
+      <a href="https://wa.me/541140749027?text=Hola!%20Quisiera%20consultar%20por%20una%20mampara%20Reflejar." class="wa-btn" target="_blank" rel="noopener">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.978-1.306A9.943 9.943 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm4.93 13.452c-.248.694-1.435 1.328-2.006 1.413-.512.077-1.16.109-1.871-.118-.432-.136-.985-.319-1.694-.625-2.981-1.287-4.928-4.289-5.077-4.487-.148-.199-1.213-1.612-1.213-3.074 0-1.463.768-2.182 1.04-2.479.272-.298.594-.372.792-.372.199 0 .397.002.57.01.182.01.427-.069.669.51.247.595.841 2.058.916 2.207.075.149.124.322.025.52-.1.199-.149.323-.298.497-.148.173-.312.387-.446.52-.148.148-.303.309-.13.606.173.298.77 1.271 1.653 2.059 1.135 1.012 2.093 1.325 2.39 1.475.297.148.471.124.644-.075.173-.198.743-.867.94-1.164.199-.298.397-.249.67-.15.272.1 1.733.818 2.03.967.298.149.496.223.57.347.075.124.075.719-.173 1.413z"/></svg>
         Consultar por WhatsApp
       </a>
       <div class="contact-rows">
         <div class="c-row"><div class="c-dot"></div><div><div class="c-lbl">Dirección</div><div class="c-val">Galicia 1860 · C1416DHB<br>Ciudad Autónoma de Buenos Aires</div></div></div>
-        <div class="c-row"><div class="c-dot"></div><div><div class="c-lbl">Teléfono</div><div class="c-val"><a href="tel:+541145810618">+54 11 4581-0618</a></div></div></div>
+        <div class="c-row"><div class="c-dot"></div><div><div class="c-lbl">Teléfono / WhatsApp</div><div class="c-val"><a href="tel:+541140749027">11 4074-9027</a></div></div></div>
         <div class="c-row"><div class="c-dot"></div><div><div class="c-lbl">Email</div><div class="c-val"><a href="mailto:info@reflejar.com.ar">info@reflejar.com.ar</a></div></div></div>
       </div>
     </div>
@@ -592,14 +622,14 @@
   <!-- FOOTER -->
   <footer>
     <div class="footer-logo">
-      <svg viewBox="0 0 420 72" xmlns="http://www.w3.org/2000/svg">
-        <rect x="0" y="27" width="15" height="15" fill="#D84B2B"/>
-        <rect x="24" y="4" width="4" height="64" fill="rgba(255,255,255,.4)"/>
-        <rect x="36" y="34" width="12" height="12" fill="rgba(255,255,255,.4)"/>
-        <text x="64" y="56" font-family="'DM Sans','Helvetica Neue',Arial,sans-serif" font-weight="400" font-size="46" fill="rgba(255,255,255,.4)" letter-spacing="2">REFLEJAR</text>
+      <svg viewBox="0 0 420 68" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0" y="22" width="11" height="11" fill="#D84B2B" opacity=".7"/>
+        <rect x="20" y="4" width="3.5" height="60" fill="rgba(255,255,255,.4)"/>
+        <rect x="30" y="30" width="11" height="11" fill="rgba(255,255,255,.4)"/>
+        <text x="54" y="52" font-family="'DM Sans','Helvetica Neue',Arial,sans-serif" font-weight="500" font-size="44" fill="rgba(255,255,255,.3)" letter-spacing="1">REFLEJAR</text>
       </svg>
     </div>
-    <p>Galicia 1860 · C1416DHB · Buenos Aires · Argentina · +54 11 4581-0618</p>
+    <p>Galicia 1860 · C1416DHB · Buenos Aires · Argentina · 11 4074-9027</p>
     <div class="footer-links">
       <a href="https://www.reflejar.com.ar" target="_blank" rel="noopener">reflejar.com.ar</a>
       <a href="mailto:info@reflejar.com.ar">info@reflejar.com.ar</a>
